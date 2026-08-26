@@ -44,7 +44,7 @@ export const ContentPlatformMockup: React.FC = () => {
           </div>
 
           <div className="p-2 bg-emerald-950/40 border border-emerald-800/40 rounded text-emerald-300 text-[11px] flex items-center justify-between">
-            <span>Generation Speed: 0.8s</span>
+            <span>Automated Generation Pipeline</span>
             <span className="font-mono bg-emerald-500 text-slate-950 font-bold px-2 py-0.5 rounded text-[10px]">
               GENERATE CAPTION
             </span>

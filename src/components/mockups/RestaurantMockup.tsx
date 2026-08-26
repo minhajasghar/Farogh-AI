@@ -1,90 +1,42 @@
 import React from 'react';
-import { Camera, Activity } from 'lucide-react';
+import { Camera, Check } from 'lucide-react';
 
 export const RestaurantMockup: React.FC = () => {
   return (
-    <div className="w-full rounded-xl border border-slate-700/80 bg-slate-950 p-4 md:p-5 font-sans text-left space-y-4">
-      {/* Top Header */}
-      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+    <div className="w-full rounded-2xl border border-[#151618] bg-[#0A0A0B] p-5 font-mono text-left space-y-4">
+      {/* Frame Top Bar */}
+      <div className="flex items-center justify-between text-xs text-[#F4F1EA]/70 border-b border-[#151618] pb-3">
         <div className="flex items-center gap-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
-          <span className="text-xs font-mono font-bold text-slate-200">RESTAURANT_VISION_ANALYTICS</span>
+          <span className="w-2 h-2 rounded-full bg-[#B7F34A] animate-pulse" />
+          <span className="font-bold text-white">CAMERA FEED // KITCHEN PREP</span>
         </div>
-        <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-1 rounded border border-emerald-800/40">
+        <div className="flex items-center gap-1.5 text-[11px] text-[#B7F34A]">
           <Camera className="w-3.5 h-3.5" />
-          YOLO Pose Analysis Active
+          <span>YOLOv8 Active</span>
         </div>
       </div>
 
-      {/* Main Grid Visual */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Camera Feed Simulator (2 cols) */}
-        <div className="md:col-span-2 relative rounded-lg bg-slate-900 border border-slate-800 p-3 min-h-[220px] flex flex-col justify-between overflow-hidden">
-          <div className="flex justify-between items-center text-[11px] text-slate-300 font-mono bg-slate-950/80 px-2.5 py-1 rounded">
-            <span>FEED 01: Kitchen Prep Counter</span>
-            <span className="text-emerald-400">Stream Processing</span>
+      {/* Single Camera Frame Visual with Bounding Overlays */}
+      <div className="relative rounded-xl bg-[#151618] p-6 min-h-[180px] flex items-center justify-around border border-[#151618] overflow-hidden">
+        {/* Detection Bounding Box 1 */}
+        <div className="border-2 border-[#B7F34A]/80 bg-[#0A0A0B]/80 rounded-lg p-3 space-y-1 shadow-lg shadow-[#B7F34A]/5">
+          <div className="text-[10px] font-bold text-[#0A0A0B] bg-[#B7F34A] px-2 py-0.5 rounded inline-block">
+            STATION 01 // PREP
           </div>
-
-          {/* YOLO Detection Box Overlays */}
-          <div className="my-4 grid grid-cols-2 gap-3">
-            <div className="border border-emerald-500/70 rounded bg-emerald-950/30 p-2.5 space-y-1">
-              <div className="flex justify-between items-center text-[10px] font-mono text-emerald-300 font-bold bg-emerald-950/90 px-1 py-0.5 rounded">
-                <span>STATION A</span>
-                <span>PREP ZONE</span>
-              </div>
-              <div className="text-[10px] text-slate-300">Station: Main Assembly</div>
-              <div className="text-[10px] text-emerald-400 font-mono">Status: Preparing Order</div>
-            </div>
-
-            <div className="border border-cyan-500/70 rounded bg-cyan-950/30 p-2.5 space-y-1">
-              <div className="flex justify-between items-center text-[10px] font-mono text-cyan-300 font-bold bg-cyan-950/90 px-1 py-0.5 rounded">
-                <span>STATION B</span>
-                <span>QUALITY CHECK</span>
-              </div>
-              <div className="text-[10px] text-slate-300">Station: Inspection & Bagging</div>
-              <div className="text-[10px] text-cyan-400 font-mono">Status: Order Bagging</div>
-            </div>
-          </div>
-
-          <div className="flex justify-between items-center text-[10px] font-mono text-slate-400 bg-slate-950/80 px-2 py-1 rounded">
-            <span>Detection Mode: YOLOv8 Pose</span>
-            <span>Station Visibility: Active</span>
-          </div>
+          <div className="text-xs text-white font-semibold">Active Assembly</div>
+          <div className="text-[10px] text-[#789C48]">Confidence: 98.4%</div>
         </div>
 
-        {/* Analytics Side Panel */}
-        <div className="space-y-3 bg-slate-900/60 p-3 rounded-lg border border-slate-800 text-xs">
-          <div className="font-semibold text-slate-200 border-b border-slate-800 pb-1.5 flex items-center justify-between">
-            <span>Operational Insights</span>
-            <Activity className="w-3.5 h-3.5 text-emerald-400" />
+        {/* Detection Bounding Box 2 */}
+        <div className="border-2 border-cyan-400/80 bg-[#0A0A0B]/80 rounded-lg p-3 space-y-1 shadow-lg shadow-cyan-400/5">
+          <div className="text-[10px] font-bold text-slate-950 bg-cyan-400 px-2 py-0.5 rounded inline-block">
+            STATION 02 // QC
           </div>
-
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <span className="text-slate-400">Prep Station Coverage</span>
-              <span className="text-emerald-400 font-semibold font-mono">Monitored</span>
-            </div>
-            <div className="w-full bg-slate-800 h-1.5 rounded-full">
-              <div className="bg-emerald-500 h-1.5 rounded-full w-full" />
-            </div>
+          <div className="text-xs text-white font-semibold flex items-center gap-1">
+            <span>Order Checked</span>
+            <Check className="w-3.5 h-3.5 text-cyan-400" />
           </div>
-
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <span className="text-slate-400">Bottleneck Tracking</span>
-              <span className="text-cyan-400 font-semibold font-mono">Active</span>
-            </div>
-            <div className="w-full bg-slate-800 h-1.5 rounded-full">
-              <div className="bg-cyan-500 h-1.5 rounded-full w-[85%]" />
-            </div>
-          </div>
-
-          <div className="pt-2 border-t border-slate-800 text-[11px] space-y-1">
-            <div className="text-slate-400 font-semibold">Automated Insights:</div>
-            <div className="text-slate-300 bg-slate-950 p-2 rounded border border-slate-800">
-              Identifies workstation bottlenecks and tracks prep activity across peak rush hours.
-            </div>
-          </div>
+          <div className="text-[10px] text-cyan-400">Confidence: 99.1%</div>
         </div>
       </div>
     </div>

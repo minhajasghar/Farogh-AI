@@ -1,65 +1,68 @@
 import React from 'react';
-import { TECH_STACK } from '../data/content';
-import { Cpu, Server, Layout } from 'lucide-react';
+import { TECH_STACK_LAYERS } from '../data/content';
+import { Cpu, Database, Layout, Workflow } from 'lucide-react';
 
-const categoryIcons: Record<number, React.ElementType> = {
-  0: Cpu,
-  1: Server,
-  2: Layout
+const LAYER_ICONS: Record<string, React.ReactNode> = {
+  INTELLIGENCE: <Cpu className="w-5 h-5 text-[#B7F34A]" />,
+  SYSTEMS: <Database className="w-5 h-5 text-[#B7F34A]" />,
+  EXPERIENCE: <Layout className="w-5 h-5 text-[#B7F34A]" />,
+  INTEGRATIONS: <Workflow className="w-5 h-5 text-[#B7F34A]" />
 };
 
 export const TechStack: React.FC = () => {
   return (
-    <section id="tech-stack" className="py-24 bg-slate-950 relative border-t border-slate-800">
+    <section id="tech-stack" className="py-24 bg-[#0A0A0B] text-[#F4F1EA] border-b border-[#151618] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header */}
+        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/40 text-xs font-mono text-emerald-400">
-            TECHNICAL CAPABILITIES & STACK
-          </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            The Stack Behind <span className="text-emerald-gradient">The Solutions.</span>
+            Technology is the foundation. <br className="hidden sm:inline" />
+            <span className="text-[#B7F34A]">Business outcomes are the goal.</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg">
-            We use proven, high-performance technology frameworks engineered for reliability, security, and low latency.
+          <p className="text-[#F4F1EA]/70 text-base sm:text-lg">
+            We choose every layer in our technology stack for performance, security, and long-term enterprise scalability.
           </p>
         </div>
 
-        {/* Categorized Tech Matrix */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {TECH_STACK.map((group, idx) => {
-            const IconComponent = categoryIcons[idx] || Cpu;
-            return (
-              <div
-                key={group.category}
-                className="glass-panel rounded-2xl p-6 border border-slate-800 space-y-4 text-left"
-              >
-                <div className="flex items-center gap-3 border-b border-slate-800 pb-3">
-                  <div className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400">
-                    <IconComponent className="w-5 h-5" />
+        {/* 4 Ecosystem Layers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {TECH_STACK_LAYERS.map((layer, idx) => (
+            <div
+              key={layer.layerName}
+              className="bg-[#151618] p-6 rounded-2xl border border-[#151618] hover:border-[#B7F34A]/40 transition-all text-left space-y-5"
+            >
+              <div className="flex items-center justify-between border-b border-[#0A0A0B] pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="p-2.5 rounded-xl bg-[#0A0A0B] shrink-0">
+                    {LAYER_ICONS[layer.layerName]}
                   </div>
-                  <h3 className="text-base font-bold text-white font-mono">
-                    {group.category}
-                  </h3>
+                  <div>
+                    <span className="text-[10px] font-mono text-[#789C48] block uppercase">LAYER 0{idx + 1}</span>
+                    <h3 className="text-base font-bold text-white tracking-tight font-mono">
+                      {layer.layerName}
+                    </h3>
+                  </div>
                 </div>
-
-                <div className="space-y-2">
-                  {group.items.map((item) => (
-                    <div
-                      key={item.name}
-                      className="p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 flex justify-between items-center text-xs"
-                    >
-                      <span className="font-bold text-slate-200 font-mono">{item.name}</span>
-                      <span className="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-900/50">
-                        {item.tag}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                <span className="text-[10px] font-mono text-[#B7F34A] bg-[#0A0A0B] px-2.5 py-0.5 rounded border border-[#789C48]/40">
+                  {layer.layerTag}
+                </span>
               </div>
-            );
-          })}
+
+              {/* Items */}
+              <div className="grid grid-cols-2 gap-2.5">
+                {layer.items.map((item) => (
+                  <div
+                    key={item.name}
+                    className="bg-[#0A0A0B] p-3 rounded-xl border border-[#151618] space-y-0.5"
+                  >
+                    <div className="text-xs font-bold text-white">{item.name}</div>
+                    <div className="text-[10px] font-mono text-[#789C48]">{item.tag}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

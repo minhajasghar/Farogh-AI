@@ -2,24 +2,24 @@
 
 @layer base {
   :root {
-    --bg-dark: #090D16;
-    --bg-card: #0F172A;
-    --border-glow: rgba(16, 185, 129, 0.2);
-    --accent-emerald: #10B981;
-    --accent-cyan: #06B6D4;
+    --obsidian: #0A0A0B;
+    --warm-white: #F4F1EA;
+    --electric-lime: #B7F34A;
+    --dark-charcoal: #151618;
+    --muted-olive: #789C48;
   }
 
   html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #07090E;
-    color: #F3F4F6;
+    background-color: #0A0A0B;
+    color: #F4F1EA;
     overflow-x: hidden;
   }
 
   body {
-    background-color: #07090E;
-    color: #E5E7EB;
+    background-color: #0A0A0B;
+    color: #F4F1EA;
     overflow-x: hidden;
   }
 
@@ -28,82 +28,86 @@
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #07090E;
+    background: #0A0A0B;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1E293B;
+    background: #151618;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #10B981;
+    background: #B7F34A;
   }
 }
 
-/* Background Grids & Ambient Glow */
-.bg-grid-pattern {
-  background-size: 32px 32px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+/* Color & Surface Utility Classes */
+.bg-obsidian {
+  background-color: #0A0A0B;
 }
 
-.bg-radial-gradient {
-  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.12) 0%, rgba(6, 182, 212, 0.05) 35%, transparent 70%);
+.bg-warm-white {
+  background-color: #F4F1EA;
+  color: #0A0A0B;
 }
 
-.bg-card-gradient {
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.75) 0%, rgba(11, 17, 31, 0.85) 100%);
+.text-warm-dark {
+  color: #0A0A0B;
+}
+
+.bg-charcoal {
+  background-color: #151618;
+}
+
+.bg-electric-lime {
+  background-color: #B7F34A;
+  color: #0A0A0B;
+}
+
+.text-electric-lime {
+  color: #B7F34A;
+}
+
+.border-electric-lime {
+  border-color: #B7F34A;
+}
+
+.border-muted-olive {
+  border-color: #789C48;
+}
+
+/* Glass and Surface Panels */
+.glass-obsidian {
+  background: rgba(10, 10, 11, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 241, 234, 0.08);
 }
 
 .glass-panel {
-  background: rgba(15, 23, 42, 0.65);
+  background: rgba(21, 22, 24, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(244, 241, 234, 0.08);
 }
 
-.glass-panel-hover {
+.card-warm {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(10, 10, 11, 0.08);
+  color: #0A0A0B;
+  box-shadow: 0 4px 20px -2px rgba(10, 10, 11, 0.04);
+}
+
+.card-warm-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.glass-panel-hover:hover {
-  background: rgba(15, 23, 42, 0.85);
-  border-color: rgba(16, 185, 129, 0.35);
-  box-shadow: 0 10px 30px -10px rgba(16, 185, 129, 0.15);
+.card-warm-hover:hover {
+  border-color: #789C48;
+  box-shadow: 0 12px 30px -10px rgba(120, 156, 72, 0.15);
   transform: translateY(-2px);
 }
 
-.emerald-glow {
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.25);
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 50%, #94A3B8 100%);
+.text-lime-gradient {
+  background: linear-gradient(135deg, #FFFFFF 0%, #B7F34A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.text-emerald-gradient {
-  background: linear-gradient(135deg, #34D399 0%, #10B981 50%, #06B6D4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Animations */
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
-}
-
-.animate-pulse-slow {
-  animation: pulseGlow 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
 }

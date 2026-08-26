@@ -67,7 +67,7 @@ export const WhatsAppFlowMockup: React.FC = () => {
           </div>
 
           <div className="bg-emerald-950/40 p-2.5 rounded-lg border border-emerald-900/60 max-w-[85%] ml-auto text-emerald-200">
-            <span className="text-[10px] text-emerald-400 font-mono block">AI Support Agent (10:24 AM - 0.4s response)</span>
+            <span className="text-[10px] text-emerald-400 font-mono block">AI Support Agent (Responds Instantly)</span>
             "Hello! Order #5821 has been processed and is currently out for courier dispatch. Expected delivery is today by 4:00 PM."
           </div>
         </div>
