@@ -15,11 +15,20 @@ export const Footer: React.FC = () => {
           {/* Company Brand (2 cols) */}
           <div className="lg:col-span-2 space-y-4 text-left">
             <a href="#" className="flex items-center" aria-label="Farogh AI — Home">
-              <img
-                src="/logo-dark.png"
-                alt="Farogh AI Logo"
-                style={{ width: '180px', height: 'auto', objectFit: 'contain', display: 'block' }}
-              />
+              {/* Same crop technique as Navbar: 6250×6250 canvas, artwork at ~38% from top */}
+              <div style={{ width: '128px', height: '34px', overflow: 'hidden' }}>
+                <img
+                  src="/logo-dark.png"
+                  alt="Farogh AI Logo"
+                  style={{
+                    width: '128px',
+                    height: '128px',
+                    objectFit: 'none',
+                    objectPosition: '-4px -48px',
+                    display: 'block',
+                  }}
+                />
+              </div>
             </a>
 
             <p className="text-[#F4F1EA]/70 text-xs leading-relaxed max-w-sm">
@@ -27,7 +36,7 @@ export const Footer: React.FC = () => {
             </p>
 
             <div className="flex items-center gap-1.5 text-[#F4F1EA]/60 text-xs font-mono">
-              <MapPin className="w-3.5 h-3.5 text-[#B7F34A]" />
+              <MapPin className="w-3.5 h-3.5 text-[#2563EB]" />
               <span>{COMPANY_LOCATION} • Serving Global Clients</span>
             </div>
           </div>
@@ -39,19 +48,19 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 font-mono">
               <li>
-                <a href="#services" className="hover:text-[#B7F34A] transition-colors">Services</a>
+                <a href="#services" className="hover:text-[#3B82F6] transition-colors">Services</a>
               </li>
               <li>
-                <a href="#case-studies" className="hover:text-[#B7F34A] transition-colors">Work</a>
+                <a href="#case-studies" className="hover:text-[#3B82F6] transition-colors">Work</a>
               </li>
               <li>
-                <a href="#about" className="hover:text-[#B7F34A] transition-colors">About</a>
+                <a href="#about" className="hover:text-[#3B82F6] transition-colors">About</a>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#B7F34A] transition-colors">Process</a>
+                <a href="#process" className="hover:text-[#3B82F6] transition-colors">Process</a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-[#B7F34A] transition-colors">Contact</a>
+                <a href="#contact" className="hover:text-[#3B82F6] transition-colors">Contact</a>
               </li>
             </ul>
           </div>
@@ -63,15 +72,15 @@ export const Footer: React.FC = () => {
             </h4>
             <div className="space-y-2.5 text-[11px] font-mono">
               <div className="flex items-center gap-2 text-[#F4F1EA]">
-                <Mail className="w-3.5 h-3.5 text-[#B7F34A] shrink-0" />
+                <Mail className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
                 <span className="truncate">{PLACEHOLDERS.email}</span>
               </div>
               <div className="flex items-center gap-2 text-[#F4F1EA]">
-                <MessageSquare className="w-3.5 h-3.5 text-[#B7F34A] shrink-0" />
+                <MessageSquare className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
                 <span className="truncate">{PLACEHOLDERS.whatsapp}</span>
               </div>
-              <div className="flex items-center gap-2 text-[#F4F1EA]/70 hover:text-[#B7F34A] transition-colors cursor-pointer">
-                <LinkedInIcon className="w-3.5 h-3.5 text-[#789C48]" />
+              <div className="flex items-center gap-2 text-[#F4F1EA]/70 hover:text-[#3B82F6] transition-colors cursor-pointer">
+                <LinkedInIcon className="w-3.5 h-3.5 text-[#2563EB]" />
                 <span>LinkedIn ({PLACEHOLDERS.linkedin})</span>
               </div>
             </div>

@@ -19,12 +19,12 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenConsultation }) => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-[#151618] rounded-3xl p-8 sm:p-14 text-center space-y-8 border border-[#151618] shadow-2xl">
           
-          <span className="text-xs font-mono font-semibold text-[#B7F34A] uppercase tracking-widest block">
+          <span className="text-xs font-mono font-semibold text-[#3B82F6] uppercase tracking-widest block">
             09 / CONTACT
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-            Let's Build <span className="text-[#B7F34A]">Something.</span>
+            Let's Build <span className="text-[#3B82F6]">Something.</span>
           </h2>
 
           <p className="text-[#F4F1EA]/80 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
@@ -34,7 +34,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenConsultation }) => {
           <div className="pt-2 flex justify-center">
             <button
               onClick={onOpenConsultation}
-              className="w-full sm:w-auto px-8 py-4 text-sm font-mono font-bold text-[#0A0A0B] bg-[#B7F34A] hover:bg-[#a6e637] rounded-xl shadow-lg shadow-[#B7F34A]/10 transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 text-sm font-mono font-bold text-white bg-[#2563EB] hover:bg-[#1D4ED8] rounded-xl shadow-lg shadow-[#2563EB]/15 transition-all flex items-center justify-center gap-2"
             >
               <span>Book a Free Consultation</span>
               <ArrowRight className="w-4 h-4" />
@@ -43,20 +43,20 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onOpenConsultation }) => {
 
           {/* Official Contact Channels */}
           <div className="pt-8 border-t border-[#0A0A0B] space-y-4">
-            <span className="text-xs font-mono text-[#789C48] uppercase tracking-wider block font-semibold">
+            <span className="text-xs font-mono text-[#2563EB]/80 uppercase tracking-wider block font-semibold">
               DIRECT CONTACT & CHANNELS
             </span>
             <div className="flex flex-wrap items-center justify-center gap-3">
               {contactChannels.map((channel) => (
                 <div
                   key={channel.name}
-                  className="px-5 py-3 rounded-xl bg-[#0A0A0B] border border-[#151618] text-xs font-mono text-[#F4F1EA]/80 hover:text-[#B7F34A] hover:border-[#B7F34A]/40 transition-all flex items-center gap-2.5 group cursor-pointer"
+                  className="px-5 py-3 rounded-xl bg-[#0A0A0B] border border-[#151618] text-xs font-mono text-[#F4F1EA]/80 hover:text-[#3B82F6] hover:border-[#2563EB]/40 transition-all flex items-center gap-2.5 group cursor-pointer"
                 >
-                  <span className="text-[#789C48] group-hover:text-[#B7F34A] transition-colors">
+                  <span className="text-[#2563EB] group-hover:text-[#3B82F6] transition-colors">
                     {channel.icon}
                   </span>
                   <span className="font-bold text-white">{channel.name}</span>
-                  <span className="text-[11px] text-[#F4F1EA]/50 group-hover:text-[#B7F34A]/80 transition-colors">
+                  <span className="text-[11px] text-[#F4F1EA]/50 group-hover:text-[#3B82F6]/80 transition-colors">
                     ({channel.value})
                   </span>
                 </div>

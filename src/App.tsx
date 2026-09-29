@@ -22,7 +22,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0B] text-[#F4F1EA] font-sans selection:bg-[#B7F34A] selection:text-[#0A0A0B]">
+    <div className="min-h-screen bg-[#0A0A0B] text-[#F4F1EA] font-sans selection:bg-[#2563EB] selection:text-white">
       {/* 5-Item Sticky Header Navigation */}
       <Navbar onOpenConsultation={handleOpenConsultation} />
 

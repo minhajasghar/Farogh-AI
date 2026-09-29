@@ -9,7 +9,7 @@ export const Process: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A0A0B] tracking-tight">
-            How We <span className="text-[#789C48]">Work</span>
+            How We <span className="text-[#2563EB]">Work</span>
           </h2>
           <p className="text-[#0A0A0B]/70 text-base sm:text-lg">
             A structured engineering journey built for clarity, speed, and long-term production reliability.
@@ -21,10 +21,10 @@ export const Process: React.FC = () => {
           {PROCESS_STEPS.map((step) => (
             <div
               key={step.number}
-              className="bg-white p-8 rounded-3xl border border-[#0A0A0B]/10 space-y-4 shadow-lg shadow-[#0A0A0B]/5 hover:border-[#789C48]/40 transition-all flex flex-col justify-between"
+              className="bg-white p-8 rounded-3xl border border-[#0A0A0B]/10 space-y-4 shadow-lg shadow-[#0A0A0B]/5 hover:border-[#2563EB]/40 transition-all flex flex-col justify-between"
             >
               <div className="space-y-4">
-                <span className="text-xs font-mono font-bold text-[#789C48] bg-[#F4F1EA] px-3 py-1 rounded-md border border-[#0A0A0B]/10 inline-block">
+                <span className="text-xs font-mono font-bold text-[#2563EB] bg-[#F4F1EA] px-3 py-1 rounded-md border border-[#0A0A0B]/10 inline-block">
                   STEP {step.number}
                 </span>
 
@@ -37,7 +37,7 @@ export const Process: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[#0A0A0B]/10 space-y-1 text-xs font-mono text-[#789C48]">
+              <div className="pt-4 border-t border-[#0A0A0B]/10 space-y-1 text-xs font-mono text-[#2563EB]">
                 {step.deliverables.map((deliv, dIdx) => (
                   <div key={dIdx}>• {deliv}</div>
                 ))}

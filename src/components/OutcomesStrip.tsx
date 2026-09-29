@@ -8,7 +8,7 @@ export const OutcomesStrip: React.FC = () => {
         {/* Core Philosophy Statement */}
         <div className="max-w-3xl mx-auto text-center space-y-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0A0A0B] leading-tight">
-            AI isn't the product. <span className="text-[#789C48]">The outcome is.</span>
+            AI isn't the product. <span className="text-[#2563EB]">The outcome is.</span>
           </h2>
           <p className="text-[#0A0A0B]/75 text-base sm:text-lg font-normal leading-relaxed">
             We don't sell AI hype or bloated SaaS subscriptions. We measure success strictly by the operational clarity, automated hours, and reliability brought to your business.
