@@ -6,12 +6,46 @@ interface HeroProps {
   onOpenConsultation: () => void;
 }
 
+/**
+ * Same logo crop technique as Navbar/Footer:
+ * 6250×6250 canvas → rendered at imgSize px → cropped via overflow:hidden + negative margins.
+ */
+const HeroLogoImg: React.FC = () => (
+  <div style={{ width: '120px', height: '46px', overflow: 'hidden', display: 'inline-block' }}>
+    <img
+      src="/logo-dark.png"
+      alt="Farogh AI"
+      style={{
+        width: '160px',
+        height: '160px',
+        display: 'block',
+        marginTop: '-56px',
+        marginLeft: '-8px',
+        objectFit: 'fill',
+      }}
+    />
+  </div>
+);
+
 export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
   return (
     <section className="relative pt-36 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-[#0A0A0B]">
+      {/* Subtle radial glow behind the content */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(37,99,235,0.08) 0%, transparent 70%)',
+        }}
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto space-y-6">
-          
+
+          {/* Logo mark above headline */}
+          <div className="flex justify-center mb-2">
+            <HeroLogoImg />
+          </div>
+
           {/* Top Subtle Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#151618] border border-[#2563EB]/40 text-xs font-mono text-[#3B82F6]">
             <span className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse" />
@@ -21,15 +55,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConsultation }) => {
           {/* Large Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12]">
             We Build the Systems <br className="hidden sm:inline" />
-            <span className="text-white">Behind Smarter Businesses.</span>
+            Behind Smarter Businesses.
           </h1>
 
-          {/* Slogan / Tagline */}
+          {/* Slogan */}
           <p className="text-xl sm:text-2xl font-mono font-semibold text-[#3B82F6] tracking-wide">
             "Engineering the Light Ahead."
           </p>
 
-          {/* Short Supporting Paragraph */}
+          {/* Supporting paragraph */}
           <p className="text-base sm:text-lg lg:text-xl text-[#F4F1EA]/80 max-w-3xl mx-auto leading-relaxed font-normal">
             <strong className="text-white font-semibold">{COMPANY_NAME}</strong> builds AI automation, computer vision, intelligent agents, and custom software that turn repetitive business operations into scalable systems.
           </p>

@@ -35,6 +35,14 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
         </button>
 
         <div>
+          {/* Small logo mark inside modal */}
+          <div style={{ width: '90px', height: '34px', overflow: 'hidden', marginBottom: '10px' }}>
+            <img
+              src="/logo-dark.png"
+              alt="Farogh AI"
+              style={{ width: '120px', height: '120px', display: 'block', marginTop: '-42px', marginLeft: '-6px', objectFit: 'fill' }}
+            />
+          </div>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A0A0B] border border-[#2563EB]/40 text-xs font-mono text-[#3B82F6]">
             BOOK A FREE CONSULTATION
           </span>

@@ -3,6 +3,26 @@ import { COMPANY_NAME, COMPANY_LOCATION, PLACEHOLDERS } from '../data/content';
 import { MapPin, Mail, MessageSquare } from 'lucide-react';
 import { LinkedInIcon } from './SocialIcons';
 
+/**
+ * Reusable logo crop helper — same arithmetic as Navbar.tsx.
+ * 6250×6250 canvas rendered at `imgSize` px → crop wrapper shows only the artwork.
+ */
+const LogoImg: React.FC<{ wrapWidth?: number; wrapHeight?: number; imgSize?: number; mtop?: number; mleft?: number }> = ({
+  wrapWidth = 116,
+  wrapHeight = 44,
+  imgSize = 155,
+  mtop = -54,
+  mleft = -8,
+}) => (
+  <div style={{ width: `${wrapWidth}px`, height: `${wrapHeight}px`, overflow: 'hidden', display: 'block' }}>
+    <img
+      src="/logo-dark.png"
+      alt="Farogh AI Logo"
+      style={{ width: `${imgSize}px`, height: `${imgSize}px`, display: 'block', marginTop: `${mtop}px`, marginLeft: `${mleft}px`, objectFit: 'fill' }}
+    />
+  </div>
+);
+
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -12,23 +32,10 @@ export const Footer: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           
-          {/* Company Brand (2 cols) */}
+          {/* Company Brand */}
           <div className="lg:col-span-2 space-y-4 text-left">
-            <a href="#" className="flex items-center" aria-label="Farogh AI — Home">
-              {/* Same crop technique as Navbar: 6250×6250 canvas, artwork at ~38% from top */}
-              <div style={{ width: '128px', height: '34px', overflow: 'hidden' }}>
-                <img
-                  src="/logo-dark.png"
-                  alt="Farogh AI Logo"
-                  style={{
-                    width: '128px',
-                    height: '128px',
-                    objectFit: 'none',
-                    objectPosition: '-4px -48px',
-                    display: 'block',
-                  }}
-                />
-              </div>
+            <a href="#" aria-label="Farogh AI — Home" className="inline-block">
+              <LogoImg wrapWidth={110} wrapHeight={40} imgSize={145} mtop={-51} mleft={-7} />
             </a>
 
             <p className="text-[#F4F1EA]/70 text-xs leading-relaxed max-w-sm">
@@ -41,35 +48,23 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Clean 5-Item Navigation */}
+          {/* Navigation */}
           <div className="space-y-3 text-left">
-            <h4 className="font-bold text-white font-mono uppercase tracking-wider text-[11px]">
-              Navigation
-            </h4>
+            <h4 className="font-bold text-white font-mono uppercase tracking-wider text-[11px]">Navigation</h4>
             <ul className="space-y-2 font-mono">
-              <li>
-                <a href="#services" className="hover:text-[#3B82F6] transition-colors">Services</a>
-              </li>
-              <li>
-                <a href="#case-studies" className="hover:text-[#3B82F6] transition-colors">Work</a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-[#3B82F6] transition-colors">About</a>
-              </li>
-              <li>
-                <a href="#process" className="hover:text-[#3B82F6] transition-colors">Process</a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-[#3B82F6] transition-colors">Contact</a>
-              </li>
+              {['#services', '#case-studies', '#about', '#process', '#contact'].map((href, i) => (
+                <li key={href}>
+                  <a href={href} className="hover:text-[#3B82F6] transition-colors">
+                    {['Services', 'Work', 'About', 'Process', 'Contact'][i]}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Official Channels & Contact Links */}
+          {/* Contact */}
           <div className="space-y-3 text-left">
-            <h4 className="font-bold text-white font-mono uppercase tracking-wider text-[11px]">
-              Official Channels
-            </h4>
+            <h4 className="font-bold text-white font-mono uppercase tracking-wider text-[11px]">Official Channels</h4>
             <div className="space-y-2.5 text-[11px] font-mono">
               <div className="flex items-center gap-2 text-[#F4F1EA]">
                 <Mail className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
@@ -81,7 +76,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 text-[#F4F1EA]/70 hover:text-[#3B82F6] transition-colors cursor-pointer">
                 <LinkedInIcon className="w-3.5 h-3.5 text-[#2563EB]" />
-                <span>LinkedIn ({PLACEHOLDERS.linkedin})</span>
+                <span>{PLACEHOLDERS.linkedin}</span>
               </div>
             </div>
           </div>
@@ -90,9 +85,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-[#151618] flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-mono text-[#F4F1EA]/50">
-          <div>
-            © {currentYear} {COMPANY_NAME}. All rights reserved.
-          </div>
+          <div>© {currentYear} {COMPANY_NAME}. All rights reserved.</div>
           <div className="flex items-center gap-4">
             <span>Practical AI & Software Engineering Studio</span>
             <span>•</span>
