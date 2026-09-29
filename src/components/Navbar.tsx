@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { COMPANY_NAME } from '../data/content';
-import { Menu, X, ArrowRight, Cpu } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 interface NavbarProps {
   onOpenConsultation: () => void;
@@ -36,13 +35,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-2.5 group shrink-0">
-          <div className="w-8 h-8 rounded-lg bg-[#B7F34A] flex items-center justify-center text-[#0A0A0B] font-bold group-hover:scale-105 transition-transform">
-            <Cpu className="w-4 h-4 text-[#0A0A0B]" />
-          </div>
-          <span className="font-extrabold text-lg tracking-tight text-white group-hover:text-[#B7F34A] transition-colors">
-            {COMPANY_NAME}
-          </span>
+        <a href="#" className="flex items-center shrink-0" aria-label="Farogh AI — Home">
+          <img
+            src="/logo-dark.png"
+            alt="Farogh AI Logo"
+            height={36}
+            style={{ height: '36px', width: 'auto', objectFit: 'contain', display: 'block' }}
+          />
         </a>
 
         {/* 5 Top Nav Items */}
@@ -82,6 +81,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#0A0A0B] border-b border-[#151618] px-6 pt-4 pb-6 space-y-4 text-left font-mono max-h-[80vh] overflow-y-auto">
+          {/* Mobile drawer logo */}
+          <div className="pb-3 border-b border-[#151618]">
+            <img
+              src="/logo-dark.png"
+              alt="Farogh AI Logo"
+              style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
+            />
+          </div>
           <div className="flex flex-col space-y-3">
             {navLinks.map((link) => (
               <a

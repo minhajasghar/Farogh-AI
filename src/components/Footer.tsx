@@ -1,6 +1,6 @@
 import React from 'react';
 import { COMPANY_NAME, COMPANY_LOCATION, PLACEHOLDERS } from '../data/content';
-import { Cpu, MapPin, Mail, MessageSquare } from 'lucide-react';
+import { MapPin, Mail, MessageSquare } from 'lucide-react';
 import { LinkedInIcon } from './SocialIcons';
 
 export const Footer: React.FC = () => {
@@ -14,13 +14,12 @@ export const Footer: React.FC = () => {
           
           {/* Company Brand (2 cols) */}
           <div className="lg:col-span-2 space-y-4 text-left">
-            <a href="#" className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#B7F34A] flex items-center justify-center text-[#0A0A0B] font-bold">
-                <Cpu className="w-4 h-4 text-[#0A0A0B]" />
-              </div>
-              <span className="font-bold text-lg text-white tracking-tight">
-                {COMPANY_NAME}
-              </span>
+            <a href="#" className="flex items-center" aria-label="Farogh AI — Home">
+              <img
+                src="/logo-dark.png"
+                alt="Farogh AI Logo"
+                style={{ height: '32px', width: 'auto', objectFit: 'contain', display: 'block' }}
+              />
             </a>
 
             <p className="text-[#F4F1EA]/70 text-xs leading-relaxed max-w-sm">
