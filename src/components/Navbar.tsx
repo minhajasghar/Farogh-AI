@@ -39,8 +39,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
           <img
             src="/logo-dark.png"
             alt="Farogh AI Logo"
-            height={36}
-            style={{ height: '36px', width: 'auto', objectFit: 'contain', display: 'block' }}
+            style={{
+              width: '180px',
+              height: 'auto',
+              display: 'block',
+              objectFit: 'contain',
+            }}
           />
         </a>
 
@@ -86,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
             <img
               src="/logo-dark.png"
               alt="Farogh AI Logo"
-              style={{ height: '28px', width: 'auto', objectFit: 'contain' }}
+              style={{ width: '160px', height: 'auto', objectFit: 'contain', display: 'block' }}
             />
           </div>
           <div className="flex flex-col space-y-3">

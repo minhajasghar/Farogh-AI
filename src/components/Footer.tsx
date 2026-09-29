@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
               <img
                 src="/logo-dark.png"
                 alt="Farogh AI Logo"
-                style={{ height: '32px', width: 'auto', objectFit: 'contain', display: 'block' }}
+                style={{ width: '180px', height: 'auto', objectFit: 'contain', display: 'block' }}
               />
             </a>
 
