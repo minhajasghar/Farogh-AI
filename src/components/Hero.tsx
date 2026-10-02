@@ -1,7 +1,7 @@
 import React from 'react';
 import { COMPANY_NAME } from '../data/content';
 import { ArrowRight, ChevronRight, Activity, ShieldCheck, Cpu } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion } from './Motion';
 import { NeuralGridCanvas } from './NeuralGridCanvas';
 
 interface HeroProps {
