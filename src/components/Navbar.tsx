@@ -5,53 +5,7 @@ interface NavbarProps {
   onOpenConsultation: () => void;
 }
 
-/**
- * Logo rendering note:
- * logo-dark.png is a 6250×6250 square canvas. The actual logo artwork
- * (symbol + FAROGH AI wordmark) occupies roughly:
- *   x: 5% → 80%  (i.e. pixels 312–5000 of the 6250px canvas)
- *   y: 35% → 64%  (i.e. pixels 2187–4000 of the 6250px canvas)
- *
- * Strategy: render the <img> at 155×155px (scaling the canvas down 40×),
- * then use a wrapper with overflow:hidden + negative margin-top to crop
- * away the empty whitespace above/around the artwork.
- *
- *   At 155px canvas:  artwork starts at y = 35% × 155 ≈ 54px from top
- *                     artwork ends   at y = 64% × 155 ≈ 99px  → height ≈ 45px
- *                     artwork starts at x =  5% × 155 ≈  8px from left
- *                     artwork ends   at x = 80% × 155 ≈ 124px → width  ≈ 116px
- */
-const LogoImg: React.FC<{ wrapWidth?: number; wrapHeight?: number; imgSize?: number; mtop?: number; mleft?: number; alt?: string }> = ({
-  wrapWidth = 116,
-  wrapHeight = 44,
-  imgSize = 155,
-  mtop = -54,
-  mleft = -8,
-  alt = 'Farogh AI Logo',
-}) => (
-  <div
-    style={{
-      width: `${wrapWidth}px`,
-      height: `${wrapHeight}px`,
-      overflow: 'hidden',
-      flexShrink: 0,
-      display: 'block',
-    }}
-  >
-    <img
-      src="/logo-dark.png"
-      alt={alt}
-      style={{
-        width: `${imgSize}px`,
-        height: `${imgSize}px`,
-        display: 'block',
-        marginTop: `${mtop}px`,
-        marginLeft: `${mleft}px`,
-        objectFit: 'fill',
-      }}
-    />
-  </div>
-);
+import { Logo } from './Logo';
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
 
         {/* ─── Brand Logo ─── */}
         <a href="#" className="flex items-center shrink-0" aria-label="Farogh AI — Home">
-          <LogoImg />
+          <Logo size="md" />
         </a>
 
         {/* ─── 5 Top Nav Links ─── */}
@@ -127,7 +81,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenConsultation }) => {
         <div className="lg:hidden bg-[#0A0A0B] border-b border-[#151618] px-6 pt-4 pb-6 space-y-4 text-left font-mono">
           {/* Mobile logo */}
           <div className="pb-3 border-b border-[#151618]">
-            <LogoImg wrapWidth={100} wrapHeight={38} imgSize={135} mtop={-47} mleft={-7} />
+            <Logo size="sm" />
           </div>
 
           <div className="flex flex-col space-y-3">

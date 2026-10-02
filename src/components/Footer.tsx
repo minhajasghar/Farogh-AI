@@ -3,25 +3,7 @@ import { COMPANY_NAME, COMPANY_LOCATION, PLACEHOLDERS } from '../data/content';
 import { MapPin, Mail, MessageSquare } from 'lucide-react';
 import { LinkedInIcon } from './SocialIcons';
 
-/**
- * Reusable logo crop helper — same arithmetic as Navbar.tsx.
- * 6250×6250 canvas rendered at `imgSize` px → crop wrapper shows only the artwork.
- */
-const LogoImg: React.FC<{ wrapWidth?: number; wrapHeight?: number; imgSize?: number; mtop?: number; mleft?: number }> = ({
-  wrapWidth = 116,
-  wrapHeight = 44,
-  imgSize = 155,
-  mtop = -54,
-  mleft = -8,
-}) => (
-  <div style={{ width: `${wrapWidth}px`, height: `${wrapHeight}px`, overflow: 'hidden', display: 'block' }}>
-    <img
-      src="/logo-dark.png"
-      alt="Farogh AI Logo"
-      style={{ width: `${imgSize}px`, height: `${imgSize}px`, display: 'block', marginTop: `${mtop}px`, marginLeft: `${mleft}px`, objectFit: 'fill' }}
-    />
-  </div>
-);
+import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -35,7 +17,7 @@ export const Footer: React.FC = () => {
           {/* Company Brand */}
           <div className="lg:col-span-2 space-y-4 text-left">
             <a href="#" aria-label="Farogh AI — Home" className="inline-block">
-              <LogoImg wrapWidth={110} wrapHeight={40} imgSize={145} mtop={-51} mleft={-7} />
+              <Logo size="md" />
             </a>
 
             <p className="text-[#F4F1EA]/70 text-xs leading-relaxed max-w-sm">
