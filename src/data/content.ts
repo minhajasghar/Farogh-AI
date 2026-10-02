@@ -76,9 +76,9 @@ export const PLACEHOLDERS = {
   founder5Name: "[FOUNDER 5 NAME]",
   role: "[ROLE]",
   shortBio: "[SHORT BIO]",
-  email: "hello@faroghai.com",
-  whatsapp: "[WHATSAPP NUMBER]",
-  linkedin: "[LINKEDIN URL]",
+  email: "hello.faroghai@gmail.com",
+  facebook: "https://facebook.com/faroghai",
+  linkedin: "https://linkedin.com/company/faroghai",
   bookingLink: "[BOOKING LINK]"
 };
 
@@ -86,7 +86,7 @@ export const CAPABILITY_STRIP_ITEMS = [
   "AI Automation Pipelines",
   "Computer Vision Analytics",
   "AI Agents & Assistive Systems",
-  "WhatsApp Cloud API Integration",
+  "Omni-channel Support Integration",
   "Custom Web & Portal Development",
   "Full-Stack Systems Architecture"
 ];
@@ -106,7 +106,7 @@ export const OUTCOMES_DATA = [
   {
     number: "03",
     title: "Respond to Customers Instantly",
-    description: "Handle incoming inquiries, status tracking, and appointment bookings 24/7 over WhatsApp."
+    description: "Handle incoming inquiries, status tracking, and appointment bookings 24/7 automatically."
   },
   {
     number: "04",
@@ -181,18 +181,18 @@ export const SERVICES_DATA: ServiceItem[] = [
     id: "ai-customer-experience",
     number: "04",
     title: "AI Customer Experience",
-    shortDesc: "Automate customer communication through WhatsApp Cloud API and web interfaces.",
-    fullDesc: "Provide 24/7 instant responses, appointment scheduling, and order status updates through AI systems directly connected to your WhatsApp Cloud API and backend database.",
+    shortDesc: "Automate customer communication through social media, web interfaces, and backend APIs.",
+    fullDesc: "Provide 24/7 instant responses, appointment scheduling, and order status updates through AI systems directly connected to your customer messaging channels and backend database.",
     iconName: "MessageSquare",
     visualType: "messaging",
     capabilities: [
-      "WhatsApp Cloud API bot integration",
+      "Customer Messaging bot integration",
       "24/7 automated order status lookup",
       "Clinic appointment scheduler"
     ],
-    technologies: ["WhatsApp Cloud API", "Node.js", "Python", "REST APIs"],
+    technologies: ["Facebook API / Web APIs", "Node.js", "Python", "REST APIs"],
     useCases: [
-      "Instant WhatsApp order tracking for e-commerce stores",
+      "Instant order tracking for e-commerce stores",
       "Automated queue status updates for clinic visitors",
       "24/7 FAQs and reservation handling"
     ]

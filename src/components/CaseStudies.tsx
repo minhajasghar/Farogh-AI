@@ -22,7 +22,7 @@ export const CaseStudies: React.FC = () => {
   });
 
   return (
-    <section id="case-studies" className="py-24 bg-[#F4F1EA] text-[#0A0A0B] border-b border-[#0A0A0B]/10 relative">
+    <section id="work" className="py-24 bg-[#F4F1EA] text-[#0A0A0B] border-b border-[#0A0A0B]/10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

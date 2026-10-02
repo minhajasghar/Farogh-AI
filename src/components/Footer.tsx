@@ -1,8 +1,7 @@
 import React from 'react';
 import { COMPANY_NAME, COMPANY_LOCATION, PLACEHOLDERS } from '../data/content';
-import { MapPin, Mail, MessageSquare } from 'lucide-react';
-import { LinkedInIcon } from './SocialIcons';
-
+import { MapPin, Mail } from 'lucide-react';
+import { LinkedInIcon, FacebookIcon } from './SocialIcons';
 import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
@@ -20,12 +19,12 @@ export const Footer: React.FC = () => {
               <Logo size="md" />
             </a>
 
-            <p className="text-[#F4F1EA]/70 text-xs leading-relaxed max-w-sm">
+            <p className="text-slate-400 text-xs leading-relaxed max-w-sm font-normal">
               AI automation, computer vision, AI agents, and custom software for modern businesses.
             </p>
 
-            <div className="flex items-center gap-1.5 text-[#F4F1EA]/60 text-xs font-mono">
-              <MapPin className="w-3.5 h-3.5 text-[#2563EB]" />
+            <div className="flex items-center gap-1.5 text-slate-400 text-xs font-mono">
+              <MapPin className="w-3.5 h-3.5 text-blue-500" />
               <span>{COMPANY_LOCATION} • Serving Global Clients</span>
             </div>
           </div>
@@ -34,39 +33,60 @@ export const Footer: React.FC = () => {
           <div className="space-y-3 text-left">
             <h4 className="font-bold text-white font-mono uppercase tracking-wider text-[11px]">Navigation</h4>
             <ul className="space-y-2 font-mono">
-              {['#services', '#case-studies', '#about', '#process', '#contact'].map((href, i) => (
-                <li key={href}>
-                  <a href={href} className="hover:text-[#3B82F6] transition-colors">
-                    {['Services', 'Work', 'About', 'Process', 'Contact'][i]}
+              {[
+                { name: 'Services', href: '#services' },
+                { name: 'Work', href: '#work' },
+                { name: 'About', href: '#about' },
+                { name: 'Process', href: '#process' },
+                { name: 'Contact', href: '#contact' }
+              ].map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="text-slate-300 hover:text-blue-400 transition-colors">
+                    {item.name}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Official Contact Channels */}
           <div className="space-y-3 text-left">
             <h4 className="font-bold text-white font-mono uppercase tracking-wider text-[11px]">Official Channels</h4>
             <div className="space-y-2.5 text-[11px] font-mono">
-              <div className="flex items-center gap-2 text-[#F4F1EA]">
-                <Mail className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
+              <a
+                href={`mailto:${PLACEHOLDERS.email}`}
+                className="flex items-center gap-2 text-slate-200 hover:text-blue-400 transition-colors truncate block"
+              >
+                <Mail className="w-3.5 h-3.5 text-blue-500 shrink-0 inline" />
                 <span className="truncate">{PLACEHOLDERS.email}</span>
-              </div>
-              <div className="flex items-center gap-2 text-[#F4F1EA]">
-                <MessageSquare className="w-3.5 h-3.5 text-[#2563EB] shrink-0" />
-                <span className="truncate">{PLACEHOLDERS.whatsapp}</span>
-              </div>
-              <div className="flex items-center gap-2 text-[#F4F1EA]/70 hover:text-[#3B82F6] transition-colors cursor-pointer">
-                <LinkedInIcon className="w-3.5 h-3.5 text-[#2563EB]" />
-                <span>{PLACEHOLDERS.linkedin}</span>
-              </div>
+              </a>
+
+              <a
+                href={PLACEHOLDERS.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-slate-200 hover:text-blue-400 transition-colors truncate block"
+              >
+                <FacebookIcon className="w-3.5 h-3.5 text-blue-500 shrink-0 inline" />
+                <span className="truncate">facebook.com/faroghai</span>
+              </a>
+
+              <a
+                href={PLACEHOLDERS.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-slate-200 hover:text-blue-400 transition-colors truncate block"
+              >
+                <LinkedInIcon className="w-3.5 h-3.5 text-blue-500 shrink-0 inline" />
+                <span className="truncate">linkedin.com/company/faroghai</span>
+              </a>
             </div>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#151618] flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-mono text-[#F4F1EA]/50">
+        <div className="pt-8 border-t border-[#151618] flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] font-mono text-slate-500">
           <div>© {currentYear} {COMPANY_NAME}. All rights reserved.</div>
           <div className="flex items-center gap-4">
             <span>Practical AI & Software Engineering Studio</span>

@@ -84,11 +84,11 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
             </div>
 
             <div className="space-y-1">
-              <label className="text-[#F4F1EA]/80 font-mono">Email or WhatsApp Number *</label>
+              <label className="text-[#F4F1EA]/80 font-mono">Email or Phone Number *</label>
               <input
                 type="text"
                 required
-                placeholder="Enter Your Email or Whatsapp Number"
+                placeholder="Enter Your Email Address or Phone Number"
                 value={formData.contactInfo}
                 onChange={(e) => setFormData({ ...formData, contactInfo: e.target.value })}
                 className="w-full px-4 py-3 rounded-xl bg-[#0A0A0B] border border-[#151618] text-white text-xs focus:outline-none focus:border-[#2563EB] transition-colors"
