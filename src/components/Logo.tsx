@@ -9,24 +9,41 @@ export const Logo: React.FC<LogoProps> = ({
   className = '',
   size = 'md',
 }) => {
-  // Locked heights for top-left navbar and global brand identity
-  const heightClasses = {
-    sm: 'h-7 sm:h-8',
-    md: 'h-8.5 sm:h-9',
-    lg: 'h-11 sm:h-12',
+  // Dimensions calibrated to crop canvas padding and make the Farogh AI artwork prominent & bold
+  const config = {
+    sm: { wrapWidth: 130, wrapHeight: 40, imgHeight: 150, mtop: -53, mleft: -8 },
+    md: { wrapWidth: 165, wrapHeight: 52, imgHeight: 195, mtop: -69, mleft: -10 },
+    lg: { wrapWidth: 200, wrapHeight: 62, imgHeight: 235, mtop: -83, mleft: -12 },
   };
 
+  const c = config[size];
+
   return (
-    <div className={`inline-flex items-center bg-transparent select-none shrink-0 ${className}`}>
-      {/* Real Official Farogh AI Logo Asset (/logo-dark.png) */}
+    <div
+      className={`inline-flex items-center bg-transparent select-none shrink-0 ${className}`}
+      style={{
+        width: `${c.wrapWidth}px`,
+        height: `${c.wrapHeight}px`,
+        overflow: 'hidden',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      {/* Real Farogh AI Logo Asset cropped to display emblem + text mark boldly */}
       <img
         src="/logo-dark.png"
         alt="Farogh AI"
-        className={`${heightClasses[size]} w-auto object-contain bg-transparent transition-transform duration-300 hover:scale-105`}
         style={{
+          height: `${c.imgHeight}px`,
+          width: 'auto',
+          maxWidth: 'none',
+          marginTop: `${c.mtop}px`,
+          marginLeft: `${c.mleft}px`,
           mixBlendMode: 'screen',
-          filter: 'drop-shadow(0 0 12px rgba(37, 99, 235, 0.45))',
+          objectFit: 'contain',
+          filter: 'drop-shadow(0 0 14px rgba(37, 99, 235, 0.55))',
         }}
+        className="transition-transform duration-300 hover:scale-105"
       />
     </div>
   );
